@@ -1,10 +1,8 @@
-package com.bta.java.autosalon.controller;
+package com.bta.java.autosalon.web.controller;
 
 import com.bta.java.autosalon.model.driverq.Driverq;
-import com.bta.java.autosalon.model.driverq.DriverqPotencial;
 import com.bta.java.autosalon.repository.DriverqRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,8 +14,6 @@ import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.springframework.stereotype.Controller;
 
 @Controller
 public class DriverqController {

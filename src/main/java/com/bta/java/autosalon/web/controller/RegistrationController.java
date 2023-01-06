@@ -1,4 +1,4 @@
-package com.bta.java.autosalon.controller;
+package com.bta.java.autosalon.web.controller;
 
 
 import ch.qos.logback.core.pattern.PostCompileProcessor;

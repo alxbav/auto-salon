@@ -58,14 +58,14 @@
             <th> Comments</th>
         </tr>
         </thead>
-        <#list driverqpotencs as driverqPotencial>
+        <#list driverqpotencs as driverPotencial>
             <tr>
 
-                <td> ${driverqPotencial.firstName}</td>
-                <td> ${driverqPotencial.lastName}</td>
-                <td> ${driverqPotencial.phone}</td>
-                <td> ${driverqPotencial.active1}</td>
-                <td> ${driverqPotencial.comments}</td>
+                <td> ${driverPotencial.firstName}</td>
+                <td> ${driverPotencial.lastName}</td>
+                <td> ${driverPotencial.phone}</td>
+                <td> ${driverPotencial.active1}</td>
+                <td> ${driverPotencial.comments}</td>
 
                 <td><a class="btn btn-primary" href="redirect:/driverq_info.ftl" role="button"> Edit </a></td>
             </tr>

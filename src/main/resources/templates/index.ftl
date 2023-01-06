@@ -57,13 +57,13 @@
 
         </tr>
         </thead>
-        <#list driverqpotencs as driverqPotencial>
+        <#list driverqpotencs as driverPotencial>
             <tr>
 
-                <td> ${driverqPotencial.firsName}</td>
-                <td> ${driverqPotencial.LastName}</td>
-                <td> ${driverqPotencial.phone}</td>
-                <td> ${driverqPotencial.active}</td>
+                <td> ${driverPotencial.firsName}</td>
+                <td> ${driverPotencial.LastName}</td>
+                <td> ${driverPotencial.phone}</td>
+                <td> ${driverPotencial.active}</td>
 
                 <td><a class="btn btn-primary" href="redirect:/driverq_info.ftl" role="button"> Edit </a></td>
             </tr>

@@ -25,8 +25,8 @@
                 <td><input type="text" name="lastName" placeholder="Last Name" class="form-control"></td>
                 <br>
                 <td><input type="number" name="phone" placeholder="Phone" class="form-control"></td><br>
-                <td><input type="text" name="active1" placeholder="Active/Passive" class="form-control"></td><br>
-                <td><textarea name="comments" placeholder="Comments" class="form-control"></textarea></td><br>
+                <td><input type="text" name="active" placeholder="Active/Passive" class="form-control"></td><br>
+                <td><textarea name="comment" placeholder="Comment" class="form-control"></textarea></td><br>
 
                 <td><button type="submit" class="btn btn-success"> OK</button></td>
             </form>

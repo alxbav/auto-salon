@@ -1,4 +1,4 @@
-package com.bta.java.autosalon.controller;
+package com.bta.java.autosalon.web.controller;
 
 import com.bta.java.autosalon.model.balanceq.Balanceq;
 import com.bta.java.autosalon.model.car.Car;

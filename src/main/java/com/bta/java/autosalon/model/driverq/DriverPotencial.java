@@ -18,7 +18,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "driverq_potential")
-public class DriverqPotencial {
+public class DriverPotencial {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;

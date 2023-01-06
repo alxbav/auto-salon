@@ -1,4 +1,4 @@
-package com.bta.java.autosalon.controller;
+package com.bta.java.autosalon.web.controller;
 
 import com.bta.java.autosalon.model.car.Car;
 import com.bta.java.autosalon.repository.CarRepository;
