@@ -1,4 +1,4 @@
-package com.bta.java.autosalon.model.driverq;
+package com.bta.java.autosalon.model.driver;
 
 
 import lombok.*;
@@ -17,8 +17,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @ToString(exclude = "transaction")
 
 @Entity
-@Table(name = "driverq_potential")
-public class DriverPotencial {
+@Table(name = "driver_potential")
+public class DriverPotential {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;

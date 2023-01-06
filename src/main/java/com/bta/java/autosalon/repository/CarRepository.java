@@ -1,10 +1,7 @@
 package com.bta.java.autosalon.repository;
 
-import com.bta.java.autosalon.model.car.*;
-import com.bta.java.autosalon.model.car.GearType;
-import com.bta.java.autosalon.model.car.BodyType;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import com.bta.java.autosalon.model.car_old.*;
+import com.bta.java.autosalon.model.car_old.GearType;
 
 import java.util.List;
 

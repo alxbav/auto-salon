@@ -54,9 +54,11 @@
             <th> Driver Lastname</th>
             <th> Phone</th>
             <th> Active</th>
+            <th><a class="btn btn-primary" href="redirect:/driverq_info.ftl" role="button"> New </a></th>
 
         </tr>
         </thead>
+
         <#list driverqpotencs as driverPotencial>
             <tr>
 
@@ -66,6 +68,7 @@
                 <td> ${driverPotencial.active}</td>
 
                 <td><a class="btn btn-primary" href="redirect:/driverq_info.ftl" role="button"> Edit </a></td>
+                <td><a class="btn btn-primary" href="redirect:/driverq_info.ftl" role="button"> Delete </a></td>
             </tr>
 
 

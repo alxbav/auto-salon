@@ -4,4 +4,8 @@ import com.bta.java.autosalon.web.dto.DriverPotentialRequestDto;
 
 public interface DriverPotentialService {
     void add(DriverPotentialRequestDto driver);
+
+
+
+    //TODO edit delete
 }

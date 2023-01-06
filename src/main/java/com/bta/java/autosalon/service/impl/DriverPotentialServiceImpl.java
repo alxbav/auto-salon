@@ -1,7 +1,7 @@
 package com.bta.java.autosalon.service.impl;
 
-import com.bta.java.autosalon.model.driverq.DriverPotencial;
-import com.bta.java.autosalon.repository.DriverqPotencialRepository;
+import com.bta.java.autosalon.model.driver.DriverPotential;
+import com.bta.java.autosalon.repository.DriverPotentialRepository;
 import com.bta.java.autosalon.service.DriverPotentialService;
 import com.bta.java.autosalon.web.dto.DriverPotentialRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,19 +11,19 @@ import org.springframework.stereotype.Service;
 public class DriverPotentialServiceImpl implements DriverPotentialService {
 
     @Autowired
-    private DriverqPotencialRepository driverqPotencialRepository;
+    private DriverPotentialRepository driverPotentialRepository;
 
     @Override
     public void add(DriverPotentialRequestDto dto) {
-        validate(dto);
-        validateUniquenessByPhone(dto);
+  //      validate(dto);
+  //      validateUniquenessByPhone(dto);
         final var entity = mapToEntity(dto);
-        driverqPotencialRepository.save(entity);
+        driverPotentialRepository.save(entity);
     }
 
 
-    private DriverPotencial mapToEntity(DriverPotentialRequestDto dto){
-        return DriverPotencial.builder()
+    private DriverPotential mapToEntity(DriverPotentialRequestDto dto){
+        return DriverPotential.builder()
                 .firstName(dto.getFirstName())
                 .lastName(dto.getLastName())
                 .phone(dto.getPhone())
@@ -33,7 +33,7 @@ public class DriverPotentialServiceImpl implements DriverPotentialService {
     }
 
     private void validateUniquenessByPhone(DriverPotentialRequestDto dto){
-        var drivers = driverqPotencialRepository.findByPhone(dto.getPhone());
+        var drivers = driverPotentialRepository.findByPhone(dto.getPhone());
         if(!drivers.isEmpty()) {
             throw new RuntimeException("Driver with MP already exists..");
         }

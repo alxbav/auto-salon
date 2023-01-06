@@ -1,7 +1,7 @@
 <#import "../common/page.ftl" as common>
 <@common.page>
     <h2> NEW Potential Driver : </h2>
-    <table class="table">
+    <table class="table table-striped">
         <thead>
 
 

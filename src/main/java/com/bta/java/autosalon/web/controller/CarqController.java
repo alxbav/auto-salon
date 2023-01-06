@@ -1,9 +1,6 @@
 package com.bta.java.autosalon.web.controller;
 
-import com.bta.java.autosalon.model.balanceq.Balanceq;
-import com.bta.java.autosalon.model.car.Car;
 import com.bta.java.autosalon.model.carq.Carq;
-import com.bta.java.autosalon.repository.CarRepository;
 import com.bta.java.autosalon.repository.CarqRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

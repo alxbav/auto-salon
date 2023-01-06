@@ -1,4 +1,4 @@
-package com.bta.java.autosalon.model.car;
+package com.bta.java.autosalon.model.car_old;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;

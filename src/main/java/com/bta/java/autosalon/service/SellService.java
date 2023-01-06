@@ -1,11 +1,9 @@
 package com.bta.java.autosalon.service;
 
 import com.bta.java.autosalon.model.balance.Balance;
-import com.bta.java.autosalon.model.car.Car;
+import com.bta.java.autosalon.model.car_old.Car;
 import com.bta.java.autosalon.repository.BalanceRepository;
 import com.bta.java.autosalon.repository.PlaceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

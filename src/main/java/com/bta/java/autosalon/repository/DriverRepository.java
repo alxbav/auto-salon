@@ -1,16 +1,16 @@
 package com.bta.java.autosalon.repository;
 
 
-import com.bta.java.autosalon.model.driverq.Driverq;
+import com.bta.java.autosalon.model.driver.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface DriverqRepository extends JpaRepository<Driverq, Long> {
+public interface DriverRepository extends JpaRepository<Driver, Long> {
 
-    List<Driverq> findAll();
+    List<Driver> findAll();
 
 
 }

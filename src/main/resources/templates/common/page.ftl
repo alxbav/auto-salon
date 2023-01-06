@@ -37,19 +37,9 @@
                             <a class="nav-link active" aria-current="page" href="/home/add">Home Add</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="/registration">New Transaction</a>
-                        </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/qrental_cars/carq-add">New Auto</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/driverq/driverq-add">New Driver</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/driverq/dogovorq-add">New Dogovor</a>
+                            <a class="nav-link" href="/driver/link">Links</a>
                         </li>
 
                         <li class="nav-item">
@@ -59,10 +49,10 @@
                             <a class="nav-link" href="/qrental-cars">Cars</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/driverq">Drivers</a>
+                            <a class="nav-link" href="/driver">Drivers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/balanceq">Balance</a>
+                            <a class="nav-link" href="/balance">Balance</a>
                         </li>
 
                         <#--                        <li class="nav-item">-->

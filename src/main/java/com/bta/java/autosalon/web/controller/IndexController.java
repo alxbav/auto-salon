@@ -1,7 +1,7 @@
 package com.bta.java.autosalon.web.controller;
 
-import com.bta.java.autosalon.model.driverq.DriverPotencial;
-import com.bta.java.autosalon.repository.DriverqPotencialRepository;
+import com.bta.java.autosalon.model.driver.DriverPotential;
+import com.bta.java.autosalon.repository.DriverPotentialRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,7 +14,7 @@ import java.util.Map;
 public class IndexController {
 
    // @Autowired
-    public DriverqPotencialRepository driverqPotencialRepository;
+    public DriverPotentialRepository driverPotentialRepository;
 
     @GetMapping("/")
     public String getRootView() {
@@ -31,7 +31,7 @@ public class IndexController {
     public ModelAndView homeMain() {
         Map<String, Object> model = new HashMap<>();
 
-        List<DriverPotencial> availableDriverPotencial = driverqPotencialRepository.findAll();
+        List<DriverPotential> availableDriverPotencial = driverPotentialRepository.findAll();
         model.put("driverqpotencs", availableDriverPotencial);
         ModelAndView result = new ModelAndView("/home", model);
         return result;

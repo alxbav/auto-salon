@@ -1,7 +1,7 @@
 package com.bta.java.autosalon.web.controller;
 
-import com.bta.java.autosalon.model.driverq.Driverq;
-import com.bta.java.autosalon.repository.DriverqRepository;
+import com.bta.java.autosalon.model.driver.Driver;
+import com.bta.java.autosalon.repository.DriverRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,13 +18,13 @@ import java.util.Map;
 @Controller
 public class DriverqController {
     @Autowired
-    private DriverqRepository driverqRepository;
+    private DriverRepository driverRepository;
 
     @GetMapping("/driverq")
     public ModelAndView getAllDriverq() {
         Map<String, Object> model = new HashMap<>();
-        List<Driverq> availableDriverq = driverqRepository.findAll();
-        model.put("driverqs", availableDriverq);
+        List<Driver> availableDriver = driverRepository.findAll();
+        model.put("driverqs", availableDriver);
         ModelAndView result = new ModelAndView("/driverq/driverq", model);
         return result;
     }
@@ -32,8 +32,8 @@ public class DriverqController {
     @GetMapping("/driverq/driverq-add")
     public ModelAndView addDriverq() {
         Map<String, Object> model = new HashMap<>();
-        List<Driverq> availableDriverq = driverqRepository.findAll();
-        model.put("driverqs", availableDriverq);
+        List<Driver> availableDriver = driverRepository.findAll();
+        model.put("driverqs", availableDriver);
         ModelAndView result = new ModelAndView("/driverq/driverq-add", model);
         return result;
     }
@@ -54,7 +54,7 @@ public class DriverqController {
             @RequestParam String taxiLicense,
             @RequestParam String address,
             @RequestParam String comments) {
-        driverqRepository.save(Driverq.builder()
+        driverRepository.save(Driver.builder()
                 .active(active)
                 .firstName(firstName)
                 .lastName(lastName)

@@ -1,7 +1,7 @@
 package com.bta.java.autosalon.model.place;
 
 
-import com.bta.java.autosalon.model.car.Car;
+import com.bta.java.autosalon.model.car_old.Car;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 

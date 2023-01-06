@@ -1,7 +1,7 @@
 package com.bta.java.autosalon.service;
 
 import com.bta.java.autosalon.model.balance.Balance;
-import com.bta.java.autosalon.model.car.Car;
+import com.bta.java.autosalon.model.car_old.Car;
 import com.bta.java.autosalon.model.place.Place;
 import com.bta.java.autosalon.repository.BalanceRepository;
 import com.bta.java.autosalon.repository.CarRepository;
@@ -11,7 +11,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

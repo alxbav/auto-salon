@@ -1,4 +1,4 @@
-package com.bta.java.autosalon.model.driverq;
+package com.bta.java.autosalon.model.driver;
 
 
 import lombok.*;
@@ -7,8 +7,6 @@ import lombok.experimental.SuperBuilder;
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Date;
-import java.time.LocalDate;
-import java.util.List;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -23,7 +21,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "driverq")
-public class Driverq {
+public class Driver {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)

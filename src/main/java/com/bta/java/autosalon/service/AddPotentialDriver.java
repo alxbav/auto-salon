@@ -1,7 +1,7 @@
 package com.bta.java.autosalon.service;
 
-import com.bta.java.autosalon.model.driverq.DriverPotencial;
-import com.bta.java.autosalon.repository.DriverqPotencialRepository;
+import com.bta.java.autosalon.model.driver.DriverPotential;
+import com.bta.java.autosalon.repository.DriverPotentialRepository;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,9 +21,9 @@ public class AddPotentialDriver {
 
 
     @Autowired
-    private DriverqPotencialRepository driverqPotencialRepository;
+    private DriverPotentialRepository driverPotentialRepository;
 
-    public void addPotentDriverq(DriverPotencial driverPotencial) {
+    public void addPotentialDriver(DriverPotential driverPotential) {
 
 
     }

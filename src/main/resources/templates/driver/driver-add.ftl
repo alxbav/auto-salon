@@ -8,7 +8,7 @@
         </tr>
         </thead>
         <div class="container mt-5 mb-5">
-            <form action="/driverq/driverq-add" method="post">
+            <form action="/driver/driver-add" method="post">
 
 
                 <td><input type="checkbox" name="active" placeholder="Active" class="form-control"></td>

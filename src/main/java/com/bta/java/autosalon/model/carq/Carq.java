@@ -1,17 +1,10 @@
 package com.bta.java.autosalon.model.carq;
 
-import com.bta.java.autosalon.model.car.BodyType;
-import com.bta.java.autosalon.model.car.FuelType;
-import com.bta.java.autosalon.model.car.GearType;
-import com.bta.java.autosalon.model.car.Manufacturer;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import java.math.BigInteger;
 import java.sql.Date;
-import java.time.LocalDate;
-import java.util.List;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
