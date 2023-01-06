@@ -31,7 +31,7 @@ public class DriverPotencial {
 
     public String phone;
 
-    public String active1;
+    public String active;
 
-    public String comments;
+    public String comment;
 }

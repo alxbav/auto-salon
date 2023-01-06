@@ -27,8 +27,8 @@ public class DriverPotentialServiceImpl implements DriverPotentialService {
                 .firstName(dto.getFirstName())
                 .lastName(dto.getLastName())
                 .phone(dto.getPhone())
-                .active1(dto.getActive())
-                .comments(dto.getComment())
+                .active(dto.getActive())
+                .comment(dto.getComment())
                 .build();
     }
 
