@@ -6,7 +6,7 @@ import java.util.List;
 
 
 //@Repository
-public interface BalanceqRepository //extends JpaRepository <Balanceq, Long>
+public interface  BalanceqRepository //extends JpaRepository <Balanceq, Long>
 {
 
     List<Balanceq> findAll();
