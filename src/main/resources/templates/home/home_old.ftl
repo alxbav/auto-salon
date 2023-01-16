@@ -71,9 +71,9 @@
                 <td> ${driverPotential.active}</td>
                 <td> ${driverPotential.comment}</td>
 
-                <td><a class="btn btn-primary" role="button"> Edit </a>
-                    <form class="d-inline" method="delete" action="@{driverPotential.id}">
-                        <button class="btn btn-danger"> Delete</button>
+                <td><a id="edit-user" type="button" class="btn btn-success" data-toggle="modal"  data-target="#userEditDialog">  th:data-driverPotentialId="${driverPotential.id}"><i class="fas fa-edit"></i> </a>
+                    <form class="d-inline" th:method="delete" th:action="@{id = (${driverPotential.id})}">
+                        <button class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
                     </form>
                 </td>
             </tr>
@@ -96,21 +96,25 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <input type="hidden" id="user-id">
+                        <input type="hidden" id="driverPotentialId">
                         <div class="form-group">
-                            <label for="user-name" class="col-form-label">First name</label>
-                            <input type="text" class="form-control" id="user-name">
+                            <label for="first-name" class="col-form-label">First name</label>
+                            <input type="text" class="form-control" id="first-name">
                         </div>
                         <div class="form-group">
-                            <label for="user-name" class="col-form-label">Last name</label>
-                            <input type="text" class="form-control" id="user-name">
+                            <label for="last-name" class="col-form-label">Last name</label>
+                            <input type="text" class="form-control" id="last-name">
                         </div>
                         <div class="form-group">
-                            <label for="user-name" class="col-form-label">Phone</label>
-                            <input type="text" class="form-control" id="user-name">
+                            <label for="phone" class="col-form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone">
                         </div>
                         <div class="form-group">
-                            <label for="user-name" class="col-form-label">Comment</label>
+                            <label for="active" class="col-form-label">Active</label>
+                            <input type="text" class="form-control" id="active">
+                        </div>
+                        <div class="form-group">
+                            <label for="comment" class="col-form-label">Comment</label>
                             <textarea name="comment" class="form-control"></textarea>
                         </div>
                     </form>
@@ -132,6 +136,33 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+
+
+    <script>
+        $('#userEditDialog').on('shown.bs.modal', function (event) {
+            let button = $(event.relatedTarget) // Button that triggered the modal
+            let driverPotentialId = button.data('driverPotentialId') // Extract info from data-* attributes
+
+            if (driverPotentialId) {
+                $.get({
+                    url: '/api/v1/driverPotential/' + driverPotentialId,
+                    success: (data) => {
+                        let modal = $(this)
+                        modal.find('#id').val(data.id)
+                        modal.find('#firstName').val(data.username)
+                        modal.find('#user-password').val(data.password)
+                    },
+                    error: (err) => {
+                        alert(err);
+                    }
+                });
+            }
+        })
+
+
+
+    </script>
+
 
 
 </@common.page>

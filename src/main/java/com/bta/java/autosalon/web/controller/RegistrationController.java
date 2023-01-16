@@ -35,7 +35,7 @@ public class RegistrationController {
                                   @RequestParam String comments) {
         Balanceq balanceq = new Balanceq(week_number, date, driver_id, summ, transaction_type, comments);
         //balanceqRepository.save(balanceq);
-        return "redirect:/index.ftl";
+        return "redirect:/index.html";
     }
 
 /*    @PostMapping("registration/balanceq_add")

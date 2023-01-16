@@ -14,4 +14,6 @@ public interface DriverPotentialRepository extends JpaRepository<DriverPotential
 
 
 
+
+
 }

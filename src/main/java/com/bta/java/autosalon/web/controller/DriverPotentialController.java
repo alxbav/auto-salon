@@ -6,16 +6,19 @@ import com.bta.java.autosalon.service.DriverPotentialService;
 import com.bta.java.autosalon.web.dto.DriverPotentialRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Controller
+@RequestMapping("/home")
 public class DriverPotentialController {
 
     @Autowired
@@ -24,7 +27,37 @@ public class DriverPotentialController {
     @Autowired
     private DriverPotentialService driverPotentialService;
 
-    @GetMapping("/home")
+    public DriverPotentialController(DriverPotentialRepository driverPotentialRepository) {
+        this.driverPotentialRepository = driverPotentialRepository;
+    }
+
+    @GetMapping()
+    public String findAll(Model model) {
+        model.addAttribute("driverPotentials", driverPotentialRepository.findAll());
+        return "/home/home.html";
+    }
+
+    @GetMapping("/{driverPotentialId}")
+    public String findById(@PathVariable long driverPotentialId, Model model) {
+        model.addAttribute("driverPotentials", driverPotentialRepository.findById(driverPotentialId));
+        return "/home/home.html";
+    }
+    @PostMapping()
+    public String save(DriverPotential driverPotential) {
+        driverPotentialRepository.save(driverPotential);
+        return "redirect:/home";
+    }
+
+    @DeleteMapping("/{driverPotentialId}")
+    public String findById(@PathVariable long driverPotentialId) {
+        driverPotentialRepository.deleteById(driverPotentialId);
+        return "redirect:/home";
+    }
+
+
+}
+
+ /*   @GetMapping("/home")
     public ModelAndView getAllDriverPotential() {
         Map<String, Object> model = new HashMap<>();
         List<DriverPotential> availableDriverPotential = driverPotentialRepository.findAll();
@@ -50,3 +83,4 @@ public class DriverPotentialController {
 
 
 }
+*/

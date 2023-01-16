@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+    <title>Q Rental group application</title>
+</head>
+
+<body>
+
+
+<h2> Свободные машины :</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th> Free cars</th>
+        <th> From Date</th>
+        <th> Rent price</th>
+        <th> Fuel type</th>
+    </tr>
+    </thead>
+
+    <tr>
+        <td> Number</td>
+        <td> date</td>
+        <td> price</td>
+        <td> fuel</td>
+
+        <td><a class="btn btn-primary" href="redirect:/driver-info.ftl" role="button"> Link </a></td>
+    </tr>
+</table>
+
+<h2> Водители: </h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th> Driver ID</th>
+        <th> Driver Firstname</th>
+        <th> Driver Lastname</th>
+        <th> Car Number</th>
+        <th> Balance</th>
+        <th> Phone</th>
+    </tr>
+    </thead>
+
+    <tr>
+        <td> id</td>
+        <td> Name</td>
+        <td> Lastname</td>
+        <td> Number</td>
+        <td> Balance</td>
+        <td> Phone</td>
+
+        <td><a class="btn btn-primary" href="redirect:/driver-info.ftl" role="button"> Info </a></td>
+    </tr>
+</table>
+<h2> Потенциальные водители: </h2>
+<table class="table">
+    <thead>
+    <tr>
+
+        <th> ID</th>
+        <th> Driver Firstname</th>
+        <th> Driver Lastname</th>
+        <th> Phone</th>
+        <th> Active</th>
+        <th> Comment</th>
+        <th>
+            <button id="create-user" type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#driverEditDialog"> NEW
+            </button>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="driverPotential : ${driverPotentials}">
+        <th scope="row" th:text="${driverPotential.id}"></th>
+        <td th:text="${driverPotential.firstName}">
+        </td>
+        <td th:text="${driverPotential.lastName}">
+        </td>
+        <td th:text="${driverPotential.phone}">
+        </td>
+        <td th:text="${driverPotential.active}">
+        </td>
+        <td th:text="${driverPotential.comment}">
+        </td>
+        <td><a id="edit-user" type="button" class="btn btn-success" data-toggle="modal" data-target="#driverEditDialog"
+               th:data-driverPotentialId="${driverPotential.id}"><i class="fas fa-edit"></i> </a>
+            <form class="d-inline" th:method="delete" th:action="@{id = (${driverPotential.id})}">
+                <button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+            </form>
+        </td>
+
+    </tr>
+
+
+    </tbody>
+
+</table>
+
+<div class="modal fade" id="driverEditDialog" tabindex="-1" role="dialog" aria-labelledby="driverEditDialogLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="driverEditDialogLabel">Potential Driver</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" id="driverPotentialId">
+                    <div class="form-group">
+                        <label for="firstName" class="col-form-label">First name</label>
+                        <input type="text" class="form-control" id="firstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name" class="col-form-label">Last name</label>
+                        <input type="text" class="form-control" id="last-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="col-form-label">Phone</label>
+                        <input type="text" class="form-control" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="active" class="col-form-label">Active</label>
+                        <input type="text" class="form-control" id="active">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment" class="col-form-label">Comment</label>
+                        <textarea name="comment" class="form-control" id="comment"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="save-user-button" type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+<script>
+    $('#driverEditDialog').on('shown.bs.modal', function (event) {
+        let button = $(event.relatedTarget) // Button that triggered the modal
+        let driverPotentialId = button.data('driverPotentialId') // Extract info from data-* attributes
+
+        if (driverPotentialId) {
+            $.get({
+                url: '/api/v1/driverPotential/' + driverPotentialId,
+                success: (data) => {
+                    let modal = $(this)
+                    modal.find('#id').val(data.id)
+                    modal.find('#firstName').val(data.firsName)
+
+                },
+                error: (err) => {
+                    alert(err);
+                }
+            });
+        }
+    })
+
+
+    $('#save-user-button').click(function () {
+        let modal = $('#driverEditDialog')
+        let driverPotential = {
+            firstname: modal.find('#firstName').val(),
+            lastname: modal.find('#lastName').val(),
+        };
+        if (modal.find('#driverPotentialId').val()) {
+            driverPotential.id = modal.find('#driverPotentialId').val()
+        }
+        $.ajax({
+            url: '/api/v1/driverPotential',
+            type: 'POST',
+            data: JSON.stringify(driverPotential),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: () => {
+                location.reload()
+            },
+            error: (err) => {
+                alert(err);
+            }
+        })
+
+        modal.modal('hide');
+    });
+
+</script>
+
+</body>
+
+
+</html>
