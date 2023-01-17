@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+ee.qtakso.driverpotential.adapter.AdapterConfig,\
+ee.qtakso.driverpotential.application.service.DriverPotentialApplicationConfig
